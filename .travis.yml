@@ -1,6 +1,6 @@
 language: cpp
 sudo: required
-
+cmake: 3.6
 compiler:
   - clang
   - gcc
