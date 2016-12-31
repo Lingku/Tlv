@@ -5,29 +5,27 @@
 #include <vector>
 #include <iostream>
 
-class TlvCore {
-public:
-//    TlvCore()
-//    {
-//        m_vector = new char_vector;
-//    };
-//
-//    ~TlvCore()
-//    {
-//        std::cout << "~~~" << std::endl;
-//        delete(m_vector);
-//    };
+namespace serialization
+{
 
-    void push_back(const char *str);
+    using tlv_vector = std::vector<uint8_t>;
+    using uint8_t_vector = std::vector<uint8_t>;
 
-    int size();
+    class TlvCore {
+    public:
+        void push_back(uint32_t const tag, uint8_t const *value, size_t const length);
 
-    const char* serialize();
+        size_t size();
 
-private:
-    using char_vector = std::vector<char>;
+        tlv_vector serialize();
 
-    char_vector m_vector;
-};
+    private:
+        tlv_vector m_vector;
+
+        void push_back_tag(uint32_t tag);
+
+        void push_back_length(size_t length);
+    };
+} // namespace serialization
 
 #endif

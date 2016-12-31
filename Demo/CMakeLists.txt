@@ -1,5 +1,5 @@
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
-add_executable (coreDemo main.c)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+add_executable (coreDemo main.cpp)
 
 # Link the executable to the Hello library. Since the Hello library has
 # public include directories we will use those link directories when building
