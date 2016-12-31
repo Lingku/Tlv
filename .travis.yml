@@ -1,5 +1,5 @@
 language: cpp
-dist: Xenial
+dist: Zesty
 compiler:
   - clang
   - gcc
