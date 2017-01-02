@@ -11,7 +11,7 @@ before_install:
 before_script:
   - mkdir build
   - cd build
-  - /tmp/cmake-3.7.1/cmake ..
+  - /tmp/cmake-3.7.1/bin/cmake ..
 
 script:
   - pwd
